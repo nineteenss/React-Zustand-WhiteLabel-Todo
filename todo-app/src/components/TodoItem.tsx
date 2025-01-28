@@ -21,7 +21,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
 }) => {
   return (
     <li>
-      <span>Todo text item</span>
+      <span>{todo.text}</span>
       <button onClick={() => onToggle(todo.id)}>Toggle</button>
       <button onClick={() => onDelete(todo.id)}>Delete</button>
     </li>

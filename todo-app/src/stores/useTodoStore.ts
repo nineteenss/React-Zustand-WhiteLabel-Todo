@@ -9,17 +9,17 @@ import { create } from "zustand";
 
 // Declaring Todo item interface
 export interface Todo {
-  id: Number; // Item unique ID
-  text: String; // Item content text
-  completed: Boolean; // Item status
+  id: number; // Item unique ID
+  text: string; // Item content text
+  completed: boolean; // Item status
 }
 
 // Declaring Todo's Store interface
 interface TodoStore {
   todos: Todo[]; // Todo's list
-  addTodo: (text: String) => void; // Add "To-do"
-  toggleTodo: (id: Number) => void; // "To-do" toggle, i.e. mark as completed
-  deleteTodo: (id: Number) => void; // Delete "To-do"
+  addTodo: (text: string) => void; // Add "To-do"
+  toggleTodo: (id: number) => void; // "To-do" toggle, i.e. mark as completed
+  deleteTodo: (id: number) => void; // Delete "To-do"
 }
 
 // Creating "Zustand" store
