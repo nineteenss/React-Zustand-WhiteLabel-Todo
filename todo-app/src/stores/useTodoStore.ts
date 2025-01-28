@@ -8,7 +8,7 @@
 import { create } from "zustand";
 
 // Declaring Todo item interface
-interface Todo {
+export interface Todo {
   id: Number; // Item unique ID
   text: String; // Item content text
   completed: Boolean; // Item status
