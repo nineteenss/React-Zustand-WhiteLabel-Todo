@@ -13,7 +13,7 @@
 export const brands = {
   a: {
     title: "Brand A", // Brand title
-    primaryColor: "bg-blue-500", // Brand main color
+    primaryColor: "bg-gray-500", // Brand main color
   },
   b: {
     title: "Brand B",
@@ -21,7 +21,7 @@ export const brands = {
   },
   c: {
     title: "Brand C",
-    primaryColor: "bg-yellow-400",
+    primaryColor: "bg-cyan-400",
   },
   default: {
     title: "Default Brand App",

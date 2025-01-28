@@ -6,6 +6,7 @@
 //
 
 import React from "react";
+import { Button } from "./components/Buttons/Button";
 import { BrandProvider } from "./components/BrandProvider";
 import { TodoList } from "./components/TodoList";
 import { useBrandStore } from "./stores/useBrandStore";
@@ -16,12 +17,12 @@ export const App: React.FC = () => {
 
   return (
     <BrandProvider>
-      <div>
-        <div>
-          <button onClick={() => setBrand("a")}>Brand A</button>
-          <button onClick={() => setBrand("b")}>Brand B</button>
-          <button onClick={() => setBrand("c")}>Brand C</button>
-          <button onClick={() => setBrand("default")}>Default</button>
+      <div className="flex flex-col max-w-sm">
+        <div className="flex flex-row gap-2">
+          <Button title="Brand A" func={() => setBrand("a")} />
+          <Button title="Brand B" func={() => setBrand("b")} />
+          <Button title="Brand C" func={() => setBrand("c")} />
+          <Button title="Default" func={() => setBrand("default")} />
         </div>
         <TodoList />
       </div>

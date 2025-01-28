@@ -7,6 +7,7 @@
 
 import React from "react";
 import { Todo } from "../stores/useTodoStore";
+import { Button } from "./Buttons/Button";
 
 interface TodoItemProps {
   todo: Todo;
@@ -20,10 +21,10 @@ export const TodoItem: React.FC<TodoItemProps> = ({
   onDelete,
 }) => {
   return (
-    <li>
+    <li className="flex flex-row">
       <span>{todo.text}</span>
-      <button onClick={() => onToggle(todo.id)}>Toggle</button>
-      <button onClick={() => onDelete(todo.id)}>Delete</button>
+      <Button title="Toggle" func={() => onToggle(todo.id)} />
+      <Button title="Delete" func={() => onDelete(todo.id)} />
     </li>
   );
 };

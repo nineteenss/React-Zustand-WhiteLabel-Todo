@@ -19,7 +19,9 @@ export const BrandProvider: React.FC<BrandProviderProps> = ({ children }) => {
 
   return (
     // Append current Brand styling
-    <div className={`${brandConfig.primaryColor}`}>
+    <div
+      className={`${brandConfig.primaryColor} flex flex-row min-h-screen justify-center items-center font-sans`}
+    >
       {/* prettier-ignore */}
       {children}
     </div>

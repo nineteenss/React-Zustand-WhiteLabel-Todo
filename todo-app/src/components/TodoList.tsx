@@ -8,6 +8,8 @@
 import React, { useState } from "react";
 import { useTodoStore } from "../stores/useTodoStore";
 import { TodoItem } from "../components/TodoItem";
+import { InputInline } from "./Inputs/InputInline";
+import { Button } from "./Buttons/Button";
 
 export const TodoList: React.FC = () => {
   const { todos, addTodo, toggleTodo, deleteTodo } = useTodoStore();
@@ -20,18 +22,25 @@ export const TodoList: React.FC = () => {
     }
   };
 
+  const handleEnterAddTodo = (event: { key: string }) => {
+    // On key press "Enter" send "To-do" item to an array
+    if (event.key === "Enter") {
+      // Call for Add new "To-do" handler
+      handleAddTodo();
+    }
+  };
+
   return (
     <div>
-      <div>
-        <input
-          type="text"
+      <div className="mt-2 flex flex-row gap-x-2 justify-between">
+        <InputInline
           value={newTodoText}
-          onChange={(e) => setNewTodoText(e.target.value)}
-          placeholder="Add new task..."
+          func={(e) => setNewTodoText(e.target.value)}
+          funcB={handleEnterAddTodo}
+          placeholder="Enter your task for today"
         />
-        <button onClick={handleAddTodo}>Add</button>
+        <Button title="Add" func={handleAddTodo} color="bg-yellow-500" />
       </div>
-      {/* Todo's current list */}
       <ul>
         {todos.map((todo) => (
           <TodoItem
@@ -41,7 +50,6 @@ export const TodoList: React.FC = () => {
             onDelete={deleteTodo}
           />
         ))}
-        <li></li>
       </ul>
     </div>
   );
