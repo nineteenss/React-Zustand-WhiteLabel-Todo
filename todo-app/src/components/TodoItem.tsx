@@ -8,6 +8,7 @@
 import React from "react";
 import { Todo } from "../stores/useTodoStore";
 import { Button } from "./Buttons/Button";
+import { IconCheckMarkToggle } from "./Icons/IconCheckMarkToggle";
 
 interface TodoItemProps {
   todo: Todo;
@@ -27,7 +28,17 @@ export const TodoItem: React.FC<TodoItemProps> = ({
       >
         {todo.text}
       </div>
-      <Button title="Done" func={() => onToggle(todo.id)} />
+      <Button
+        title={
+          todo.completed ? (
+            <IconCheckMarkToggle isToggled={false} />
+          ) : (
+            <IconCheckMarkToggle isToggled={true} />
+          )
+        }
+        color="bg-transparent"
+        func={() => onToggle(todo.id)}
+      />
       <Button
         title="Delete"
         color="bg-red-400"
